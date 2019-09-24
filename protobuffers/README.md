@@ -65,7 +65,7 @@ message AddressBook {
         - `repeated`: the field may be repeated any number of times (including zero). The order of the repeated values will be preserved in the protocol buffer. Think of repeated fields as dynamically sized arrays.
 
 ### Generate data access classes using protobuffer compiler
-- Now let's use the Protocol Buffer compiler `protoc` to generate the Java classes we'll need in our application. Version 3.9.1 of the compiler, pre-built for Windows 64-bit, is included with the lab code.
+- Now let's use the Protocol Buffer compiler `protoc` to generate the Java classes we'll need in our application. Version 3.9.1 of the compiler, pre-built for Windows 64-bit, is included with the lab code. Other versions are available at the protobuffers [project release page on github](https://github.com/protocolbuffers/protobuf/releases) (Mac version is [here](https://github.com/protocolbuffers/protobuf/releases/download/v3.9.2/protoc-3.9.2-osx-x86_64.zip), Linux version is [here](https://github.com/protocolbuffers/protobuf/releases/download/v3.9.2/protoc-3.9.2-linux-x86_64.zip)).
     - Open a terminal window (Git Bash is recommended). From the folder distributed-systems-labs/protoBuffers, run the following command.
     ```
     protoc-3.9.1-win64/bin/protoc.exe --java_out=./src/main/java ./src/main/resources/addressbook.proto
