@@ -78,10 +78,10 @@ message AddressBook {
 #### Question
 What class provides this serialisation functionality? What interface defines what additional methods the data access classes should implement?
 <details><summary>Hint</summary>
-<p>
+
 `Person` and `AddressBook` extend `com.google.protobuf.GeneratedMessageV3`. This provides serialisation functionality. The auto-generated `PersonOrBuilder` and `AddressBookOrBuilder` interfaces define the methods the `Person`/`AddressBook` and their associated builder should implement. 
-</p>
-</details  
+
+</details>  
 
 ### Use the data access classes in our application
 - In order to use these generated data access classes, we'll need the protobuffer java library they depend on. Add the Protocol Buffer runtime dependency to your `pom.xml`
