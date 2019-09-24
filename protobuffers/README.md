@@ -94,7 +94,11 @@ What class provides this serialisation functionality? What interface defines wha
 ```
 #### Tasks
 ##### Complete the following tasks, referring to the lecture notes and [Protocol Buffer Developer Guide](https://developers.google.com/protocol-buffers/docs/overview) where necessary.
-- `AddPerson.java` contains the static method `PromptForAddress` which is supposed to create and return a `Person` object. Right now it just prompts the user for some person data, and doesn't compile because it doesn't return a `Person`. Complete this method by creating a `Person` object using the appropriate builders. Create a builder using the relevant objects `newBuilder()` method. Add your code where it says `ADD CODE HERE` :smiley:.
+- `AddPerson.java` contains the static method `PromptForAddress` which is supposed to create and return a `Person` object. Right now it  prompts the user for some person data, but doesn't compile because it doesn't return a `Person`. Complete this method by creating a `Person` object using the appropriate builders. A `Person` builder has already been created for you using `Person.newBuilder()`, and some of the fields have been set (`id`, `name`). Finish creating this person by
+- adding a phone number (Hint: you'll need a `PhoneNumberBuilder`)
+- calling `build()` and returning a `Person` object.
+Add your code where it says `ADD CODE HERE` :smiley:.
+
 <details><summary>Solution</summary>
     
 ```  
