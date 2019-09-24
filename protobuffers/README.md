@@ -66,7 +66,7 @@ message AddressBook {
 
 ### Generate data access classes using protobuffer compiler
 - Now let's use the Protocol Buffer compiler `protoc` to generate the Java classes we'll need in our application. Version 3.9.1 of the compiler, pre-built for Windows 64-bit, is included with the lab code.
-    - Open a terminal window (e.g. Windows `cmd` or `PowerShell`, or Git Bash). From the folder distributed-systems-labs/protoBuffers, run the following command.
+    - Open a terminal window (Git Bash is recommended). From the folder distributed-systems-labs/protoBuffers, run the following command.
     ```
     protoc-3.9.1-win64/bin/protoc.exe --java_out=./src/main/java ./src/main/resources/addressbook.proto
     ```
