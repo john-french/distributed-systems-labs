@@ -54,7 +54,6 @@ public class HelloWorldServer {
         }
     }
 
-
     static class GreeterImpl extends GreeterGrpc.GreeterImplBase {
 
         @Override
@@ -64,5 +63,4 @@ public class HelloWorldServer {
             responseObserver.onCompleted();
         }
     }
-
 }

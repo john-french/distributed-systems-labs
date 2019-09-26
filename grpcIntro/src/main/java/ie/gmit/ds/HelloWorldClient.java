@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class HelloWorldClient {
     private static final Logger logger = Logger.getLogger(HelloWorldClient.class.getName());
     private final ManagedChannel channel;
-    private final GreeterGrpc.GreeterBlockingStub blockingStub;
+    private final GreeterGrpc.GreeterBlockingStub greeterClientStub;
 
     /** Construct client for accessing HelloWorld server using the existing channel. */
     public HelloWorldClient(String host, int port) {
@@ -20,7 +20,7 @@ public class HelloWorldClient {
                 // needing certificates.
                 .usePlaintext()
                 .build();
-        blockingStub = GreeterGrpc.newBlockingStub(channel);
+        greeterClientStub = GreeterGrpc.newBlockingStub(channel);
     }
 
     public void shutdown() throws InterruptedException {
@@ -33,7 +33,7 @@ public class HelloWorldClient {
         HelloRequest request = HelloRequest.newBuilder().setName(name).build();
         HelloReply response;
         try {
-            response = blockingStub.sayHello(request);
+            response = greeterClientStub.sayHello(request);
         } catch (StatusRuntimeException e) {
             logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
             return;
