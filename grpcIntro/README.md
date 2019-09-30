@@ -15,7 +15,7 @@ In this lab we'll look at an example of a simple gRPC service. The `Greeter` ser
         service Greeter {
             rpc SayHello (HelloRequest) returns (HelloReply) {}
       }
-      ```
+    ```
   - `HelloWorldClient.java` is a class which will call out gRPC `Greeter` service.
   - `HelloWorldServer.java` is a class which will ultimately handle the call to our gRPC `Greeter` service and return a response.
 
@@ -49,6 +49,7 @@ server = ServerBuilder.forPort(port)
         .start();
 ```
 - Run the `main` method in `HelloServer` to start the gRPC server.
+
  _In Eclipse, if the server isn't compiling due to gRPC classes not being found on the build path, then add the `target/generated-sources directory` as a source folder._
 
 
