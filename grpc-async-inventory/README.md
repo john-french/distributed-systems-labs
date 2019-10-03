@@ -9,8 +9,9 @@ In this lab we'll build a gRPC Inventory service, which will use an asynchronous
 ### Project Creation
 - Create a new maven project with artifactId `grpc-async-inventory`, and groupId `ie.gmit.ds`.
 - We know we'll need the gRPC libraries, and we'll be using the `protobuf-maven-plugin` to automatically compile our `.proto` file, so add this to the pom:
+
 <details>
-<summary>`pom.xml`</summary>
+    <summary><b>pom.xml</b></summary>
 
 ```
     <properties>
@@ -80,8 +81,9 @@ In this lab we'll build a gRPC Inventory service, which will use an asynchronous
 
 ### Defining the Service Interface
 - Our InventoryService will expose methods to add a new item and to list all items. Create a new file `inventory.proto` in `src/main/proto` (the maven plugin looks here by default), and add the following:
+
 <details>
-<summary>`inventory.proto`</summary>
+    <summary><b>inventory.proto</b></summary>
 
 ```
 syntax = "proto3";
@@ -110,13 +112,14 @@ message Item {
 ```
 
 </details>
+
 - Running a maven compile should now create our gRPC client and server stubs in an `InventoryServiceGrpc` class in `target/generated-sources/`, along with the `Item` and `Items` data access classes.
 
 ### Implementing the Service
 - Create a new class `InventoryServiceImpl` which extends `InventoryServiceGrpc.InventoryServiceImplBase`. We'll need to override and provide implementations for the `addItem` and `getItems` methods, as follows:
 
 <details>
-<summary>Method Implementations</summary>
+    <summary><b>Method Implementations</b></summary>
 
 ```
   private ArrayList<Item> itemsList;
@@ -153,9 +156,11 @@ message Item {
     }
 ```
 </details>
+
 - Let's also populate the inventory with some dummy items to help us test:
+
 <details>
-<summary>Code to populate inventory</summary>
+    <summary><b>Code to populate inventory</b></summary>
 
 ```
     private void createDummyItems() {
@@ -186,8 +191,9 @@ message Item {
     private static final int PORT = 50551;
 ```
 - We'll need to add methods to start and stop our server, and to keep it alive until something terminates it. The `start` method creates a new gRPC Server and registers our Inventory Service implementation with it:
+
 <details>
-<summary>Server startup and shutdown methods</summary>
+    <summary><b>Server startup and shutdown methods</b></summary>
 
 ```
     private void start() throws IOException {
@@ -215,9 +221,11 @@ message Item {
     }
 ```
 </details>
+
 - Give the server a main method so we can easily run it and start the gRPC server:
+
 <details>
-<summary>Server main method</summary>
+    <summary><b>Server main method</b></summary>
 
 ```
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -230,8 +238,9 @@ message Item {
 
 ### Create Client
 - Create a new class `InventoryClient`. We'll need to create a `Channel` to connect to the gRPC server, and stubs to call methods on. We'll use a blocking (synchronous) and asynchronous stub.
+
 <details>
-<summary>Client Initialisation</summary>
+<summary><b>Client Initialisation</b></summary>
 
 ```
     private static final Logger logger =
@@ -259,8 +268,9 @@ message Item {
 ### Call Client Stubs
 #### Synchronous
 - We'll add a new inventory item synchronously by calling the blocking stub:
+
 <details>
-<summary>Synchronous Call</summary>
+    <summary><b>Synchronous Call</b></summary>
 
 ```
     public void addNewInventoryItem(Item newItem) {
@@ -280,9 +290,11 @@ message Item {
     }
 ```
 </details>
+
 - To list items, we'll use an asynchronous call. This time we'll need to pass in a `StreamObserver` to handle the aynchronous response from the server:
+
 <details>
-<summary>Asynchronous Call
+    <summary><b>Asynchronous Call</b></summary>
 
 ```
     private void getItems() {
@@ -320,9 +332,11 @@ message Item {
 ```
 
 </details>
+
 - Now let's actually call these client methods by providing a main method:
+
 <details>
-<summary>Client main method</summary>
+    <summary><b>Client main method</b></summary>
 
 ```
     public static void main(String[] args) throws Exception {
