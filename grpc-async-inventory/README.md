@@ -130,7 +130,7 @@ message Item {
 ```
   private ArrayList<Item> itemsList;
     private static final Logger logger =
-            Logger.getLogger(InventoryClient.class.getName());
+            Logger.getLogger(InventoryServiceImpl.class.getName());
 
     public InventoryServiceImpl() {
         itemsList = new ArrayList<>();
