@@ -26,6 +26,11 @@ In this lab we'll build a gRPC Inventory service, which will use an asynchronous
 
     <dependencies>
         <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty-shaded</artifactId>
             <version>1.23.0</version>
