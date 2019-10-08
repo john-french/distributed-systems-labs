@@ -116,7 +116,8 @@ message Item {
 - Running a maven compile should now create our gRPC client and server stubs in an `InventoryServiceGrpc` class in `target/generated-sources/`, along with the `Item` and `Items` data access classes.
 
 ### Implementing the Service
-- Create a new class `InventoryServiceImpl` which extends `InventoryServiceGrpc.InventoryServiceImplBase`. We'll need to override and provide implementations for the `addItem` and `getItems` methods, as follows:
+- Create a new package `ie.gmit.ds` in `src/main/java`.
+- In that package, create a new class `InventoryServiceImpl` which extends `InventoryServiceGrpc.InventoryServiceImplBase`. We'll need to override and provide implementations for the `addItem` and `getItems` methods, as follows:
 
 <details>
     <summary><b>Method Implementations</b></summary>
@@ -184,7 +185,7 @@ message Item {
 </details>
 
 ### Create Server and Register Service
-- Create a new class `InventoryServer`, and declare the following variables:
+- Create a new class `InventoryServer`in `ie.gmit.ds`, and declare the following variables:
 ```
     private Server grpcServer;
     private static final Logger logger = Logger.getLogger(InventoryServer.class.getName());
@@ -237,7 +238,7 @@ message Item {
 </details>
 
 ### Create Client
-- Create a new class `InventoryClient`. We'll need to create a `Channel` to connect to the gRPC server, and stubs to call methods on. We'll use a blocking (synchronous) and asynchronous stub.
+- Create a new class `InventoryClient` in `ie.gmit.ds`. We'll need to create a `Channel` to connect to the gRPC server, and stubs to call methods on. We'll use a blocking (synchronous) and asynchronous stub.
 
 <details>
 <summary><b>Client Initialisation</b></summary>
@@ -333,7 +334,11 @@ message Item {
 
 </details>
 
-- Now let's actually call these client methods by providing a main method:
+- Now let's actually call these client methods by providing a main method which will:
+    - Create an `InventoryClient`
+    - Create a new Item
+    - Use the client to add the new item to the inventory
+    - Use the client to list all items (asynchronously)
 
 <details>
     <summary><b>Client main method</b></summary>
