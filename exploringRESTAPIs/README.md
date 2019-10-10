@@ -3,9 +3,6 @@
 ## Lab: Exploring a REST API
 _Inspired by Chapter 2 of [Designing APIs with Swagger and OpenAPI](https://www.manning.com/books/designing-apis-with-swagger-and-openapi) by Josh Ponelat, under development, expected publication Spring 2020._
 
-### Overview
-
-## Lab Procedure
 ### The SWAPI
 For this lab we'll be exploring the [Star Wars API](https://swapi.co), or SWAPI. To quote the author:
 >The Star Wars API is the world's first quantified and programmatically-formatted set of Star Wars data.
