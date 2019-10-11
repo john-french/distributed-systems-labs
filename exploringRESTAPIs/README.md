@@ -20,7 +20,7 @@ Exploring this API will help you to:
 - see an example of good REST API design
 
 ### Postman
-To explore this API we'll need some way to send HTTP requests. We could do this on the command line using `curl` or, if we liked pain, `telnet`. `curl` can be really handy for quick & dirty command line requests, but a more user friendly alternative is Postman. Postman is a graphical tool for sending HTTP requests with a bunch of features which make our lives easier. If you're using a lab machine, download this [portable version](https://portapps.io/app/postman-portable/#download) and install it to your OneDrive. If you're on your own machine, [get your version here](https://www.getpostman.com/downloads/).
+To explore this API we'll need some way to send HTTP requests. We could do this on the command line using `curl` or, if we liked pain, `telnet`. `curl` can be really handy for quick & dirty command line requests, but a more user friendly alternative is Postman. Postman is a graphical tool for sending HTTP requests with a bunch of features which make our lives easier. If you're using a lab machine, download this [portable version](https://portapps.io/download/postman-portable-win64-7.7.3-20-setup.exe) and install it to your OneDrive. If you're on your own machine, [get your version here](https://www.getpostman.com/downloads/).
 
 When you start up Postman it'll prompt you to create an account. You **don't need** to create an account.
 
