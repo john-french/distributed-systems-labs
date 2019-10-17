@@ -15,7 +15,8 @@ We're going to design part of API for a record label. The record label has a dat
 - Artist name
 - Artist genre
 - Number of albums published under the label
-- Artist username
+- Artist ID
+
 The API will allow clients to
 - list all label artists
 - get information on specific artists
@@ -29,6 +30,7 @@ In the navigation tab on the left, select `Create New -> Create New API`. In the
 - `Version: 1`
 - `Title: Simple Artist API`
 - `Auto Mocking: Off`
+
 You can leave the rest blank. Hit `Create API`. You'll now have a template to start writing your OpenAPI definition. The meta-data section will be pre-populated with the information you entered in the dialog box.
 
 The things we'll need to define in the API will be:
@@ -51,7 +53,8 @@ First off we'll define the paths in our API. Paths are the API endpoints that cl
     - `POST`: create new artist
 - `/artists/{artistId}`
     - `GET`: get specific artist based on `artistId`
-Let;s start with `/artists`. Under `/paths:` and indented by one level, add the `/artists` path:
+
+Let's start with `/artists`. Under `/paths:` and indented by one level, add the `/artists` path:
 ```
 paths:
   /artists:
@@ -76,7 +79,7 @@ components:
     Artist:
       type: object
       required:
-        - username
+        - artist_id
       properties:
         artist_name:
           type: string
@@ -114,4 +117,4 @@ Based on the example above, and the [OpenAPI 3.0 Specification](https://swagger.
   - uses a required `parameter` called `artistId`, which is a path parameter.
 
 
-_Adapted from the [Swaggerhub OpenAPI 3.0 Tutorial](https://app.swaggerhub.com/help/tutorials/openapi-3-tutorial)
+_Adapted from the [Swaggerhub OpenAPI 3.0 Tutorial](https://app.swaggerhub.com/help/tutorials/openapi-3-tutorial)_
