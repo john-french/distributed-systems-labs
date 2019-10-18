@@ -8,7 +8,7 @@ This is the first of two labs where we'll take a *Design First* approach to buil
 
 ## Lab Procedure
 ### Create Swaggerhub account
-We could download and install various Swagger tools for designing APIs with OpenAPI, but it's easier and faster to use a cloud platform that provides these tools freely online. Head to [SwaggerHub]https://app.swaggerhub.com/signup?channel=directWithinApp) and select **Log in with Github**. This will redirect you to github.com to enter your credentials. Log in to your github account. You'll be redirected back to Swaggerhub and will be logged in with your Github username.
+We could download and install various Swagger tools for designing APIs with OpenAPI, but it's easier and faster to use a cloud platform that provides these tools freely online. Head to [SwaggerHub](https://app.swaggerhub.com/signup?channel=directWithinApp) and select **Log in with Github**. This will redirect you to github.com to enter your credentials. Log in to your github account. You'll be redirected back to Swaggerhub and will be logged in with your Github username.
 
 ### Creating a new API
 We're going to design part of API for a record label. The record label has a database of artists with the following information:
