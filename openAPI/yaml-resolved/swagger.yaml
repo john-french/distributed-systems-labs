@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: Simple Artist API
+  version: "1"
+servers:
+- url: https://virtserver.swaggerhub.com/john-french/ArtistAPI/1
+  description: SwaggerHub API Auto Mocking
+paths:
+  /artists:
+    get:
+      tags:
+      - artists
+      description: Returns a list of artists
+      responses:
+        200:
+          description: Successfully returned a list of artists
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Artist'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Artist'
+            application/yaml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Artist'
+components:
+  schemas:
+    Artist:
+      required:
+      - username
+      type: object
+      properties:
+        artist_name:
+          type: string
+          example: Bon Jovi
+        artist_genre:
+          type: string
+          example: Rock
+        albums_recorded:
+          type: integer
+          example: 5
+        artist_id:
+          type: string
+          example: "12345"
