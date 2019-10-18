@@ -13,7 +13,7 @@ paths:
       description: Returns a list of artists
       responses:
         200:
-          description: Successfully returned a list of artists
+          description: Successfully returned list of artists
           content:
             application/json:
               schema:
